@@ -59,22 +59,23 @@ Before you begin, ensure you have the following:
 ## API Endpoints
 - **Endpoint:** `POST /tick`
 - **Example Request:**
-   ```bash
-   curl --location 'http://127.0.0.1:8000/tick' \
-   --header 'Content-Type: application/json' \
-   --data '{
-      "channel_id": "<your-test-telex-channel-id>",
-      "return_url": "https://ping.telex.im/v1/return/<your-test-telex-channel-id>",
-      "settings": [
-         {
-               "label": "repo_name",
-               "type": "text",
-               "required": true,
-               "default": "github_username/repo"
-         },
-      ]
-   }'
-   ```
+```bash
+curl --location 'https://github-fork-tracker.onrender.com/tick' \
+--header 'Content-Type: application/json' \
+--data '{
+  "channel_id": "<your-test-telex-channel-id>",
+  "return_url": "https://ping.telex.im/v1/return/<your-test-telex-channel-id>",
+  "settings": [
+    {
+      "label": "repo_name",
+      "type": "text",
+      "required": true,
+      "default": "<github_username>/<repo>"
+    }
+  ]
+}'
+```
+- **Example Response:** `{"message":"Task added to background tasks"}`
 
 ---
 
